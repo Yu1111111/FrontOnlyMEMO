@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      @font-face {
+        font-family: "dot";
+        src: url("DotGothic16-Regular.ttf") format("truetype");
+      }
+
+      body {
+        font-size: 24px;
+        font-family: "dot", sans-serif;
+      }
+    </style>
+
+    <title>１からメモ帳作成</title>
+  </head>
+  <body>
+    <!-- AI君が作ってくれるコードをコピペして試運転するのも結構だが、結局アウトプットにはならないため「ただコードが散らかった」となるだけだ。
+    ここでは自力で思ったものを書き出す。 -->
+    <!-- 先ずは機能の配置を明確にするため骨組みを組む。 -->
+
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <div class="col-2 d-flex flex-column border">
+          <h1>ファイル</h1>
+          <div class="align-items-start">
+            <button type="button" class="btn btn-primary" id="trigger-addFile">
+              追加
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="trigger-removeFile"
+            >
+              削除
+            </button>
+          </div>
+          <div class="list-group m-1" id="Display-FileList"></div>
+        </div>
+        <div class="col-10 border">
+          <h1>テキスト</h1>
+          <button type="button" class="btn btn-primary" id="trigger-addText">
+            追加
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="trigger-removeText"
+          >
+            削除
+          </button>
+          <div class="card m-1" id="Display-TextList"></div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="JS/visitUser.js"></script>
+    <script type="module" src="JS/createFile.js"></script>
+    <script type="module" src="JS/removeFile.js"></script>
+    <script type="module" src="JS/createText.js"></script>
+    <script type="module" src="JS/removeText.js"></script>
+  </body>
+</html>
